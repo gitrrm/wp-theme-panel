@@ -8,7 +8,7 @@
  * Adding theme setup page
  * 
  */
-function enqueue_custom_scripts() {
+function enqueue_ct_custom_scripts() {
     wp_enqueue_media();
     wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', array('jquery'), null, true);
     wp_localize_script('main', 'custom_vars', array(
@@ -17,7 +17,7 @@ function enqueue_custom_scripts() {
     ));
 }
 
-add_action('admin_enqueue_scripts', 'enqueue_custom_scripts');
+add_action('admin_enqueue_scripts', 'enqueue_ct_custom_scripts');
 
 
 function ct_theme_setup() {
