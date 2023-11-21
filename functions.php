@@ -128,9 +128,6 @@ function ct_custom_scripts() {
 
 	wp_enqueue_script( 'ct-custom-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-	/*wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array(['jquery']), false, true );
-	wp_localize_script('main', 'ajax_params', array('ajax_url' => admin_url('admin-ajax.php')));
-*/
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -198,25 +195,3 @@ function get_breadcrumb() {
         echo '</em>"';
     }
 }
-
-// file upload ajax handle
-/*function handle_file_upload() {
-    if (isset($_FILES['file'])) {
-        $file = $_FILES['file'];
-
-        // Handle file upload logic here (e.g., move_uploaded_file)
-
-        // Return a response (you can customize this)
-        echo json_encode(array('success' => true, 'message' => 'File uploaded successfully.'));
-    } else {
-        echo json_encode(array('success' => false, 'message' => 'No file provided.'));
-    }
-
-    // Always exit to avoid extra output
-    exit();
-}*/
-
-// add_action('wp_ajax_handle_file_upload', 'handle_file_upload');
-// add_action('wp_ajax_nopriv_handle_file_upload', 'handle_file_upload');
-
-
